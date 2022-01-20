@@ -37,18 +37,23 @@ var slotMachine = {
     },
     display() {
         var lines = [];
+        // we need to display the 3 lines on the slot machine
+        // we initialize in 0 to this.reels.length
         for (let linePos = 0; linePos <= this.reels.length; linePos++) {
-            // suggested
+            // suggested, we use a map to read the values from the reels, using the keyword this to access the propertie
             let line = this.reels.map(reel => {
+                // we created the slot
                 var slot = Object.create(reel);
+                //and assign the position
                 slot.position = (
                     reel.symbols.length +
                     reel.position +
                     linePos
                 ) % reel.symbols.length;
+                // we call display
                 return slot.display();
             })
-
+            // and finally we join the characters in array by position
             lines.push(line.join(" | "));
         }
         // print line by line
