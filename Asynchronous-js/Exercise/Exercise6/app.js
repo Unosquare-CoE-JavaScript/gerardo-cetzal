@@ -4,6 +4,7 @@
 //and add the todo to the jsonplaceholder site. Make sure you account for possible errors.
 
 let addTodo = async function() {
+    // note: only to add async in the function doesn't mean that the function is asynchronous
     try {
         let resp = await fetch('https://jsonplaceholder.typicode.com/todos/', {
             method: 'POST',
@@ -26,7 +27,7 @@ let todo = {
     userId: 1,
     title: "Learn Promises"
 };
-
+// only pass the object
 addTodo(todo);
 
 console.log('Other code');

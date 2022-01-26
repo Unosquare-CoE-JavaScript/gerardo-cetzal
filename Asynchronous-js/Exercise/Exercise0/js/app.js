@@ -1,13 +1,16 @@
 /*
-Take a moment and analyze this code. What would it take to make it asynchronous using setTimeout? Try a few things and see how they work.
+Take a moment and analyze this code.
+What would it take to make it asynchronous using setTimeout? Try a few things and see how they work.
 */
-let students = [{name:"Mary",score:90,school:"East"},
-{name:"James",score:100,school:"East"},
-{name:"Steve",score:40,school:"East"},
-{name:"Gabe",score:90,school:"West"},
-{name:"Rachel",score:85,school:"East"},
-{name:"Rochelle",score:95,school:"West"},
-{name:"Lynette",score:75,school:"East"}];
+let students = [
+    {name:"Mary",score:90,school:"East"},
+    {name:"James",score:100,school:"East"},
+    {name:"Steve",score:40,school:"East"},
+    {name:"Gabe",score:90,school:"West"},
+    {name:"Rachel",score:85,school:"East"},
+    {name:"Rochelle",score:95,school:"West"},
+    {name:"Lynette",score:75,school:"East"}
+];
 
 let processStudents = function(data, callback) {
     for (let i = 0; i < data.length; i++) {
@@ -20,7 +23,7 @@ let processStudents = function(data, callback) {
 }
 
 console.log("Before determineTotal");
-
+// this we will as parameter in a setTimeout function
 let determineTotal = function() {
     let total = 0,
         count = 0;
@@ -32,7 +35,8 @@ let determineTotal = function() {
 
     console.log("Total Score: " + total + " - Total Count: " + count);
 }
-
+// the easy way to convert an asynchronous function is pass the fucntion and put the timer
+// in this case because we can
 setTimeout(determineTotal, 0);
 
 console.log("End of code.")

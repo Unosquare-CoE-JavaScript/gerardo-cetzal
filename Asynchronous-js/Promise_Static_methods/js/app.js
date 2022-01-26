@@ -1,6 +1,7 @@
 "use strict";
 
-
+// example a basic promise
+// we only add a set time for resolve the promise
 let p1 = new Promise(function(resolve, reject) {
     setTimeout(function() {
         resolve("Done");

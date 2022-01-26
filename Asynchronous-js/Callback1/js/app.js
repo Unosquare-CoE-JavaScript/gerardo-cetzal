@@ -30,8 +30,13 @@ let processStudents = function(data, callback) {
         }
     }
 }
+// A callback is a function passed as an argument to another function
+// we can pass a callback as a parameter
+
+// THE PERFECT EXAMPLE ABOUT CALLBACK: "I will call back later!"
 
 processStudents(students, function(obj) {
+    // calculate if the student has an approve note
     if (obj.score > 60) {
         console.log(obj.name + " passed!");
     }
@@ -40,7 +45,6 @@ processStudents(students, function(obj) {
 let determineTotal = function() {
     let total = 0,
         count = 0;
-
     processStudents(students, function(obj) {
         total = total + obj.score;
         count++;

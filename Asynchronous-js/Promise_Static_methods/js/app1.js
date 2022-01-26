@@ -25,6 +25,7 @@ let middleName = function() {
     });
 };
 
+// with .race we can get the first promise resolved
 Promise.race([firstName(), lastName(), middleName()])
     .then(function(msg) {
         console.log(msg);
