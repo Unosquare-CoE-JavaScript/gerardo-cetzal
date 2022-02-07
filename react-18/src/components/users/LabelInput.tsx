@@ -6,6 +6,7 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 export function LabelInput({ label, value, ...rest }: Props) {
+  // useId, Can be used to generate unique ID’s in an SSR-safe way
   const id = useId();
   return (
     <div className="mb-3">

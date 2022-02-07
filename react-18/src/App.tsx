@@ -10,6 +10,7 @@ function App() {
     <div className="container">
       <BrowserRouter>
         <NavBar />
+        {/* Multiple suspense components can be nested */}
         <Suspense fallback={<Loading />}>
           <AppRoutes />
         </Suspense>

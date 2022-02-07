@@ -5,6 +5,8 @@ import { PrimeRange } from './PrimeRange';
 const defaultValue = 250;
 
 export function PrimeNumbers() {
+  // The useTransition() hook can be used to control how React
+// renders when components suspend
   const [isPending, startTransition] = useTransition();
   const [maxPrime, setMaxPrime] = useState(defaultValue);
   const values = new Array(maxPrime).fill(null);

@@ -11,6 +11,11 @@ import { ErrorFallback } from './components/ErrorFallback';
 import { fetcher } from './utils/fetcher';
 import { Loading } from './components/Loading';
 
+// Allows React to “suspend” rendering a component subtree
+
+// The “fallback” component will be rendered instead
+// Replaces the complete children component tree
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <ErrorBoundary FallbackComponent={ErrorFallback}>
     <Suspense fallback={<Loading />}>

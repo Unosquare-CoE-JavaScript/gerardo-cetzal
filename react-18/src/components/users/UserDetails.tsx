@@ -8,6 +8,12 @@ interface Props {
   movieId: number;
   isPending: boolean;
 }
+// Multiple suspense boundaries can suspend in parallel
+
+
+// ** note <SuspenseList /> will let you control how multiple <Suspense />
+// components render their fallback
+
 export function UserDetails({ userId, movieId, isPending }: Props) {
   return (
     <div>
