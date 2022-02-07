@@ -23,12 +23,14 @@ export class ProjectInput extends Component<HTMLDivElement, HTMLFormElement> {
     }
 
     renderContent() { }
-
+    // gather input receive title: string, description: string and people: number but also we can add the optional void
+    // that means the function doesnt receive a parameter
     private gatherUserInput(): [string, string, number] | void {
         const enteredTitle = this.titleInputElement.value;
         const enteredDescription = this.descriptionInputElement.value;
         const enteredPeople = this.peopleInputElement.value;
 
+        // Validatable is from utils file
         const titleValidatable: Validatable = {
             value: enteredTitle,
             required: true
@@ -56,7 +58,7 @@ export class ProjectInput extends Component<HTMLDivElement, HTMLFormElement> {
             return [enteredTitle, enteredDescription, +enteredPeople];
         }
     }
-
+    // this is simple, we will clear the inputs
     private clearInputs() {
         this.titleInputElement.value = '';
         this.descriptionInputElement.value = '';

@@ -1,3 +1,17 @@
+/**
+ * 
+TypeScript supports object-oriented programming features like classes, interfaces, etc. 
+A class in terms of OOP is a blueprint for creating objects. 
+A class encapsulates data for the object. Typescript gives built in support for this concept called class.
+ */
+
+// abstract class
+/**
+ * 
+ * A TypeScript Abstract class is a class which may have some unimplemented methods. 
+ * These methods are called abstract methods. We can't create an instance of an abstract class. 
+ * But other classes can derived from abstract class and reuse the functionality of base class.
+ */
 abstract class Department {
     static fiscalYear = 2022;
     // private id: string;
@@ -24,6 +38,7 @@ abstract class Department {
     }
 }
 
+// The class that is extended to create newer classes is called the parent class/super class.
 class ITDepartment extends Department {
     admins: string[];
     constructor(id: string, admins: string[]) {

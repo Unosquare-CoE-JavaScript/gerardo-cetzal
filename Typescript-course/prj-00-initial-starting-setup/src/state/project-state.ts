@@ -3,6 +3,7 @@ import { Project, ProjectStatus } from "../models/project";
 // Project State management
 type Listener<T> = (items: T[]) => void;
 
+// we use a generic for the class State, state create the listener
 class State<T> {
     protected listeners: Listener<T>[] = [];
 
@@ -11,14 +12,16 @@ class State<T> {
     }
 }
 
+// we extends the State and we define the generic, in this case is Project Class
 class ProjectState extends State<Project> {
+    // we use a private variables 'cause only we use in this class
     private projects: Project[] = [];
     private static instance: ProjectState;
 
     private constructor() {
         super();
     }
-
+    // we create a static method instance
     static getInstance() {
         if (this.instance) {
             return this.instance;

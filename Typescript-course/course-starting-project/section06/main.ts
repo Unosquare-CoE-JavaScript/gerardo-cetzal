@@ -16,12 +16,17 @@ const e1: ElevatedEmployee = {
     startDate: new Date()
 };
 
+// A common technique for working with unions is to have a single field which uses literal types which you can use to let 
+// TypeScript narrow down the possible current type
 type Combinable = string | number;
 type Numeric = number | boolean;
 
+// intersection types
 type Universal = Combinable & Numeric;
 
 // combine, overload function
+// function overloading, or method overloading, is the ability to create multiple methods with the same name and same return type, 
+// but a different number of parameters or different parameter types.
 function add(a: number, b: number): number;
 function add(a: string, b: string): string;
 function add(a: Combinable, b: Combinable) {

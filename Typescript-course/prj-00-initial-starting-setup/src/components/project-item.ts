@@ -7,6 +7,7 @@ import { autobind } from '../decorators/autobind';
 export class ProjectItem extends Component<HTMLUListElement, HTMLLIElement> implements Draggable {
     private project: Project;
 
+    // validation for numbers of persons on the project
     get persons() {
         if (this.project.people === 1) {
             return '1 person';

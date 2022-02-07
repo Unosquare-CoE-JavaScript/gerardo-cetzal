@@ -1,3 +1,5 @@
+// we can define the type of the parameter in ts
+// the next example is a basic function
 function add(n1: number, n2: number, showResult: boolean, phrase: string) {
     //if (typeof n1 !== 'number' || typeof n2 !== 'number') {
     //    throw new Error('Incorrect input!');

@@ -1,5 +1,5 @@
 import { IsNotEmpty, IsNumber, IsPositive } from 'class-validator';
-
+// basic use of decorators
 export class Product {
     @IsNotEmpty()
     title: string;

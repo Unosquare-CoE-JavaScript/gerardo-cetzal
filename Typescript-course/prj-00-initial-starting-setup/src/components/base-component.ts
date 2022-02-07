@@ -1,4 +1,6 @@
 
+// base component, we will use  for inputs, items and list
+// this a little bit similar with react components
 export abstract class Component<T extends HTMLElement, U extends HTMLElement> {
     templateElement: HTMLTemplateElement;
     hostElement: T;

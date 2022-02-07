@@ -1,5 +1,9 @@
 // type AddFn = ( a:number, b: number ) => number;
-
+/**
+ * 
+ * Interface is a structure that defines the contract in your application. 
+ * It defines the syntax for classes to follow
+ */
 interface AddFn {
     (a: number, b: number): number;
 }
@@ -15,10 +19,14 @@ interface Named {
     outputName?: string; // optional
 }
 
+// and also we can extend interfaces
 interface Greetable extends Named {
     greet(phrase: string): void;
 }
 
+// in this case, implements allow us use the interface
+// implements will be more for polymorphism
+// ... polymorphism is the provision of a single interface to entities of different types...
 class Person implements Greetable {
     name?: string;
     age = 30;

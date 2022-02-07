@@ -10,6 +10,28 @@
 //     data.split(' ');
 // })
 
+
+/**
+ * 
+ * Generics are basically a kind of tool that enables you to create reusable 
+ * code components that work with a number of types instead of a single type
+ * The main reason to use generics in TypeScript is to enable types, classes or interfaces to act as parameters
+ * 
+ * Benefits of generic
+ * 
+ * 1---------
+ * Defining a relationship between input and output parameters types. 
+ * For example, function test <T>(input: T[]): T { … } allows you to make sure input and output use the same type, though input as an array.
+ * 2---------
+ * Stronger type checks at compile time will be available. In the case of above example, 
+ * compiler lets you know array methods are available for input and not any other methods.
+ * 3---------
+ * You can remove some unnecessary type casts. For example, when you have const list: Array<Item> = [],
+ * going over array elements, you will have access to all the Item members.
+    
+ 
+ */
+
 function merge<T extends object, U extends object>(objA: T, objB: U) {
     return Object.assign(objA, objB);
 }

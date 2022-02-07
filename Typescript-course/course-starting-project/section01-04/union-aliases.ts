@@ -1,6 +1,8 @@
+// we can define a combinable type with the next operator "|"
 type Combinable = number | string;
 type ConverstionDescriptor = 'as-number' | 'as-text';
 
+// this a simple function that only print info but we used conditionals
 function combine(
     input1: Combinable, 
     input2: Combinable, 

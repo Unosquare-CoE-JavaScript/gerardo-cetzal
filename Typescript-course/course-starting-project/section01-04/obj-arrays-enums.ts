@@ -2,6 +2,9 @@
 //     name: string,
 //     age: number
 // } = {
+/**
+ *  Using enums can make it easier to document intent, or create a set of distinct cases
+ */
 enum Role {
     ADMIN,
     READ_ONLY,

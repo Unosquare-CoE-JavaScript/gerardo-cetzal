@@ -1,3 +1,14 @@
+/**
+ * What is a decorator?
+ * 
+ * A Decorator is a special kind of declaration that can be attached to a class declaration,
+ *  method, accessor, property, or parameter
+ * 
+ * for examplo angular uses decorators
+ */
+
+
+// this is a decorator, the function is bind
 function Autobind(_: any, _2: string , descriptor: PropertyDescriptor) {
     const originalMethod = descriptor.value;
     const adjDescriptor: PropertyDescriptor = {
@@ -12,6 +23,7 @@ function Autobind(_: any, _2: string , descriptor: PropertyDescriptor) {
 }
 class Printer {
     message = 'this work!';
+    // decorators are written like angular, at first we need the @
     @Autobind
     showMessage() {
         console.log(this.message);

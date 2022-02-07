@@ -1,4 +1,5 @@
 // Drag & Drop Interfaces
+// this are the models
 export interface Draggable {
     dragStartHandler(event: DragEvent): void;
     dragEndHandler(event: DragEvent): void;
