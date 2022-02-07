@@ -10,6 +10,7 @@ const initialState = {
 
 /*
 Custom hook for animation
+for compund components we used context api
 */
 
 const useClapAnimation = ({
@@ -125,12 +126,15 @@ const MediumClap = ({ children, onClap }) => {
         }))
     }, [])
 
+    // the custom hook allow us animate the clap funcionality
+    // clapRef, clapCountRef and clapTotalRef are identifiers 
     const animationTimeline = useClapAnimation({
         clapEl: clapRef,
         countEl: clapCountRef,
         clapTotalEl: clapTotalRef
     })
 
+    // we created a ref to allow the update of the component with the hook useEffect
     const componentJustMounted = useRef(true)
     useEffect(() => {
         if (!componentJustMounted.current) {
@@ -141,6 +145,7 @@ const MediumClap = ({ children, onClap }) => {
         }
     }, [count])
 
+    // well this a inc button, we update the state of the counter
     const handleClapClick = () => {
         animationTimeline.replay()
         setClaptState(prevState => ({
@@ -150,11 +155,13 @@ const MediumClap = ({ children, onClap }) => {
         }))
     }
 
+    // we memoized the value, this is a optimization and help us to avoid the re-render
     const memoizedValue = useMemo(() => ({
         ...clapState,
         setRef
     }), [clapState, setRef])
-
+    // with the proviver comoponent we can 'export' the value to another components with useContext
+    
     return (
         <Provider value={memoizedValue}>
             <button ref={setRef} data-refkey="clapRef" className={styles.clap} onClick={handleClapClick}>
@@ -169,6 +176,7 @@ const MediumClap = ({ children, onClap }) => {
 */
 
 const ClapIcon = () => {
+    // we need to know is the clapButton is clicked, in this case we need to use useContext
     const { isClicked } = useContext(MediumClapContext);
     return (
         <span>
@@ -203,6 +211,8 @@ const CountTotal = () => {
     )
 }
 
+
+// expressive and flexible APIs to share state and logic within components
 MediumClap.Icon = ClapIcon
 MediumClap.Count = ClapCount
 MediumClap.Total = CountTotal

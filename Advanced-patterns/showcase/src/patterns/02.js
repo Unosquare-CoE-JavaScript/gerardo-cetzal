@@ -19,6 +19,10 @@ const useClapAnimation = ({
 }) => {
     const [animationTimeline, setAnimationTimeline] = useState(() => new mojs.Timeline())
 
+    /** 
+     * he signature is identical to useEffect , but it fires synchronously after all DOM mutations. 
+     * Use this to read layout from the DOM and synchronously re-render.
+    */
     useLayoutEffect(() => {
         if (!clapEl || !countEl || !clapTotalEl) {
             return
@@ -164,6 +168,7 @@ const ClapIcon = ({ isClicked }) => {
         </span>)
 }
 
+// Components for clap count and count total
 const ClapCount = ({ count, setRef }) => {
     return (
         <span ref={setRef} data-refkey="clapCountRef" className={styles.count}>

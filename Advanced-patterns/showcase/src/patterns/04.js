@@ -230,6 +230,9 @@ const CountTotal = ({ style: userStyles = {}, className }) => {
     const { countTotal, setRef } = useContext(MediumClapContext)
     const classNames = [styles.total, className].join(' ').trim()
 
+    // in general this is the same code but using a different way to use the styles so only is illustrative example
+    // reusable styles
+
     return (
         <span
             ref={setRef}

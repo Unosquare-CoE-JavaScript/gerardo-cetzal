@@ -252,6 +252,11 @@ const Usage = () => {
         console.log('Clicked!')
     }
 
+    // prop getters, we defined and object of values, we can apply the spread operator and pass to child component
+    // this is very useful and more easy to read
+    // also we can call the props getters to ovewrite the values of the object
+    // and that is simple
+
     return (
         <ClapContainer setRef={setRef} data-refkey="clapRef" {...getTogglerProps({
             onClick: handleClick,

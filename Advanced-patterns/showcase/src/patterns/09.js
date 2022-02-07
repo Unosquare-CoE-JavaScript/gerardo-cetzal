@@ -15,6 +15,11 @@ const INITIAL_STATE = {
     isClicked: false
 }
 
+/** 
+ * The state initializer pattern allows you to expose an API to users to be able to reset your component 
+ * to its original state without having to completely unmount and remount the component.
+*/
+
 /**
  * Custom Hook for animation
  */
