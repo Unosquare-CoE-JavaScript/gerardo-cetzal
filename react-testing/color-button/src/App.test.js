@@ -21,8 +21,8 @@ test('button has correct initial color', () => {
 test('initial conditions', () => {
   render(<App />);
   // check that button starts out enabled
-  const colorButton = screen.getByRole('button', { name: 'Change to blue'});
-  expect( colorButton).toBeEnabled();
+  const colorButton = screen.getByRole('button', { name: 'Change to blue' });
+  expect(colorButton).toBeEnabled();
 
   // check that checkbox starts out unchecked
   const checkbox = screen.getByRole('checkbox');
@@ -30,7 +30,7 @@ test('initial conditions', () => {
 });
 
 test('Checkbox disables button first click and desables on second click', () => {
-  render(<App/>);
+  render(<App />);
   const checkbox = screen.getByRole('checkbox', { namae: 'Disables bbutton' });
   const colorButton = screen.getByRole('button', { name: 'Change to blue' });
 
@@ -40,5 +40,36 @@ test('Checkbox disables button first click and desables on second click', () => 
   fireEvent.click(checkbox);
   expect(colorButton).toBeEnabled();
 })
+
+test('Disabled button has gray background and reverts to read', () => {
+  render(<App />);
+  const checkbox = screen.getByRole('checkbox', { namae: 'Disables button' });
+  const colorButton = screen.getByRole('button', { name: 'Change to blue' });
+
+  // disable button
+  fireEvent.click(checkbox);
+  expect(colorButton).toHaveStyle('background-color: gray');
+
+  // re-enable button 
+  fireEvent.click(checkbox);
+  expect(colorButton).toHaveStyle('background-color: red');
+});
+
+test('Clicked disabled button has gray background and reverts to blue', () => {
+  render(<App />);
+  const checkbox = screen.getByRole('checkbox', { namae: 'Disables button' });
+  const colorButton = screen.getByRole('button', { name: 'Change to blue' });
+
+  // change button to blue
+  fireEvent.click(colorButton);
+
+  // disable button
+  fireEvent.click(checkbox);
+  expect(colorButton).toHaveStyle('background-color: gray');
+
+  // re-enable button
+  fireEvent.click(checkbox);
+  expect(colorButton).toHaveStyle('background-color: blue');
+});
 
 
